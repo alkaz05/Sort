@@ -25,15 +25,32 @@ public class Main {
         while(a < left.length){
            res[c] = left[a];   a++;   c++;
         }
-       while(b < right.length) {
+        while(b < right.length) {
            res[c] = right[b];  b++;   c++;
-       }
-       return res;
+        }
+        return res;
     }
 
 
     public static void mergeSort(int[] arr)
     {
+        if (arr.length>1){
+            int[] left = new int[arr.length/2];
+            int[] right = new int[arr.length- left.length];
+            for (int i = 0; i < left.length; i++) {
+                left[i]= arr[i];
+            }
+            for (int i = 0; i < right.length; i++) {
+                int k = left.length+i;
+                right[i] = arr[k];
+            }
+            mergeSort(left);
+            mergeSort(right);
+            int[] r = merge(left, right);
+            for (int i = 0; i < r.length; i++) {
+                arr[i] = r[i];
+            }
+        }
 
     }
 

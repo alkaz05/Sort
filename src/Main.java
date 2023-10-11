@@ -35,6 +35,7 @@ public class Main {
     public static void mergeSort(int[] arr)
     {
         if (arr.length>1){
+            //Разделение
             int[] left = new int[arr.length/2];
             int[] right = new int[arr.length- left.length];
             for (int i = 0; i < left.length; i++) {
@@ -44,8 +45,10 @@ public class Main {
                 int k = left.length+i;
                 right[i] = arr[k];
             }
+            //Рекурсия
             mergeSort(left);
             mergeSort(right);
+            //Слияние
             int[] r = merge(left, right);
             for (int i = 0; i < r.length; i++) {
                 arr[i] = r[i];

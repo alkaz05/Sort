@@ -10,8 +10,8 @@ public class Main {
 
     public static void bubbleSort(int[] arr)
     {
-        for (int last= arr.length-1; last>0; last-- )        {
-            for (int k=0; k<last; k++)            {
+        for (int i=0; i< arr.length-1; i++ )        {
+            for (int k=0; k< arr.length-1-i; k++)            {
                 if( arr[k] > arr[k+1])
                 {
                     int tmp = arr[k];
